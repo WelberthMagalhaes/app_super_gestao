@@ -18,6 +18,10 @@ use App\Http\Controllers\SobreNosController;
 
 Route::get('/', [PrincipalController::class, 'principal']);
 
+Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos']);
+
 Route::get('/contato', [ContatoController::class, 'contato']);
 
-Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos']);
+Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem?}', function (string $nome, $categoria, $assunto, $mensagem = 'mensagem nao informada') {
+    echo "Estamos aqui $nome - $categoria - $assunto - $mensagem";
+});
