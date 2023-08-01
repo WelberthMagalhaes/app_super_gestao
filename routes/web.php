@@ -34,3 +34,17 @@ Route::prefix('/app')->group(function () {
         return 'Produtos';
     })->name('app.produtos');
 });
+
+Route::get('/rota1', function () {
+    echo 'rota1';
+})->name('site.rota1');
+
+Route::get('/rota2', function () {
+    return redirect()->route('site.rota1');
+})->name('site.rota2');
+
+// Route::redirect('/rota2', '/rota1');
+
+Route::fallback(function () {
+    echo 'A rota acessada não existe. Clique <a href="' . route('site.index') . '">aqui </a> para ir para página inicial.';
+});
