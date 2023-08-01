@@ -46,5 +46,5 @@ Route::get('/rota2', function () {
 // Route::redirect('/rota2', '/rota1');
 
 Route::fallback(function () {
-    echo 'A rota acessada não existe. Clique <a href="' . route('site.index') . '">aqui </a> para ir para página inicial.';
+    echo 'A rota acessada não existe. Clique <a href="' . route('site.index') . '">aqui</a> para ir para página inicial.';
 });
