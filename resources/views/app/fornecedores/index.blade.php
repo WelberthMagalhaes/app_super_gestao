@@ -22,6 +22,10 @@
     Fornecedor Inativo.
 @endunless --}}
 
-@isset($fornecedores[1])
-    Está definida.
+@isset($fornecedores)
+    Fornecedor: {{ $fornecedores[0]['nome'] ?? 'Nome não definido.'}}
+    <br>
+    Status: {{ $fornecedores[0]['status'] ?? 'Status não definido.'}}
+    <br>
+    CNPJ: {{ $fornecedores[0]['CNPJ'] ?? 'Dado não informado'}}
 @endisset
