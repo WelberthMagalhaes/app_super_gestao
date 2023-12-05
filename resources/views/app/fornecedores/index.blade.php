@@ -18,6 +18,10 @@
     <h3>Ainda não existem fornecedores cadastrados.</h3>
 @endif --}}
 
-@unless ($fornecedores[0]['status'] == 'S') <!-- Executa se FALSO-->
+{{-- @unless ($fornecedores[0]['status'] == 'S') <!-- Executa se FALSO-->
     Fornecedor Inativo.
-@endunless
+@endunless --}}
+
+@isset($fornecedores[1])
+    Está definida.
+@endisset
