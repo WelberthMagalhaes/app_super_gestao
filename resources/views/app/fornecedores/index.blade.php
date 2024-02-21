@@ -23,27 +23,15 @@
 @endunless --}}
 
 @isset($fornecedores)
-    Fornecedor: {{ $fornecedores[3]['nome'] ?? 'Nome não definido.' }}
-    <br>
-    Status: {{ $fornecedores[3]['status'] ?? 'Status não definido.' }}
-    <br>
-    CNPJ: {{ $fornecedores[3]['CNPJ'] ?? 'Dado não informado' }}
-    <br>
-    Telefone: {{ $fornecedores[3]['ddd'] ?? '' }} {{ $fornecedores[3]['telefone'] ?? '' }}
-    @switch($fornecedores[3]['ddd'])
-        @case('11')
-            São Paulo - SP
-        @break
-
-        @case('32')
-            Juiz de Fora - MG
-        @break
-
-        @case('85')
-            Fortaleza - CE
-        @break
-
-        @default
-            Cidade/Estado não identificado
-    @endswitch
+    @for ($i = 0; isset($fornecedores[$i]); $i++)
+        Fornecedor: {{ $fornecedores[$i]['nome'] ?? 'Nome não definido.' }}
+        <br>
+        Status: {{ $fornecedores[$i]['status'] ?? 'Status não definido.' }}
+        <br>
+        CNPJ: {{ $fornecedores[$i]['CNPJ'] ?? 'Dado não informado' }}
+        <br>
+        Telefone: {{ $fornecedores[$i]['ddd'] ?? '' }} {{ $fornecedores[$i]['telefone'] ?? '' }}
+        <hr>
+    @endfor
 @endisset
+<br>

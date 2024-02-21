@@ -33,7 +33,7 @@ class FornecedorController extends Controller
                 'telefone' => '0000-0000'
             ],
             3 => [
-                'nome' => 'Fornecedor 3',
+                'nome' => 'Fornecedor 4',
                 'status' => 'N',
                 'CNPJ'   => '00.000.000/0001-00',
                 'ddd'    => '',
